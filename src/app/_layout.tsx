@@ -1,43 +1,22 @@
 import '../global.css';
-import { Tabs } from 'expo-router';
-import AntDesign from '@expo/vector-icons/AntDesign';
+
+import { ClerkProvider } from '@clerk/expo';
+import { Slot } from 'expo-router';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { tokenCache } from '@clerk/expo/token-cache';
+
+const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
+
+if (!publishableKey) {
+  throw new Error('Add your Clerk Publishable Key to the .env file.');
+}
 
 export default function Layout() {
   return (
     <SafeAreaProvider>
-      <Tabs>
-        <Tabs.Screen
-          name="index"
-          options={{
-            title: 'Home',
-            headerShown: false,
-            tabBarIcon: ({ color, size }) => (
-              <AntDesign name="home" color={color} size={size} />
-            ),
-          }}
-        />
-        <Tabs.Screen
-          name="profile"
-          options={{
-            title: 'Profile',
-            headerShown: false,
-            tabBarIcon: ({ color, size }) => (
-              <AntDesign name="user" color={color} size={size} />
-            ),
-          }}
-        />
-        <Tabs.Screen
-          name="history"
-          options={{
-            title: 'History',
-            headerShown: false,
-            tabBarIcon: ({ color, size }) => (
-              <AntDesign name="clock-circle" color={color} size={size} />
-            ),
-          }}
-        />
-      </Tabs>
+      <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
+        <Slot />
+      </ClerkProvider>
     </SafeAreaProvider>
   );
 }
