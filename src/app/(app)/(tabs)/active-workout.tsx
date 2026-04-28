@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 const ActiveWorkout = () => {
   return (
     <SafeAreaView className="flex flex-1">
-      <Text>ActiveWorkout</Text>
+      <Text>Active Workout</Text>
     </SafeAreaView>
   );
 };
