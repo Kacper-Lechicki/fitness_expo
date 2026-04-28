@@ -1,5 +1,5 @@
 {
-  "name": "fit-app",
+  "name": "fitness-expo",
   "version": "1.0.0",
   "private": true,
   "main": "expo-router/entry",
@@ -23,7 +23,7 @@
     "expo-router": "~55.0.13",
     "expo-splash-screen": "~55.0.19",
     "expo-status-bar": "~55.0.5",
-    "nativewind": "^4.0.1",
+    "nativewind": "^4.2.3",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-native": "0.83.6",
@@ -50,7 +50,8 @@
   "overrides": {
     "minimatch": "^9.0.7",
     "postcss": "^8.5.10",
-    "uuid": "^14.0.0"
+    "uuid": "^14.0.0",
+    "react-native-css-interop": "latest"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
