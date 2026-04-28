@@ -1,11 +1,13 @@
-import React from 'react';
 import { Text } from 'react-native';
+import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function Page() {
+const Exercises = () => {
   return (
     <SafeAreaView className="flex flex-1">
-      <Text>Profile</Text>
+      <Text>Exercises</Text>
     </SafeAreaView>
   );
-}
+};
+
+export default Exercises;
